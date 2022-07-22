@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React_News_App_Redux/static/css/main.c63b2822.css",
+    "main.js": "/React_News_App_Redux/static/js/main.bd5191c2.js",
+    "index.html": "/React_News_App_Redux/index.html",
+    "main.c63b2822.css.map": "/React_News_App_Redux/static/css/main.c63b2822.css.map",
+    "main.bd5191c2.js.map": "/React_News_App_Redux/static/js/main.bd5191c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c63b2822.css",
+    "static/js/main.bd5191c2.js"
+  ]
+}
