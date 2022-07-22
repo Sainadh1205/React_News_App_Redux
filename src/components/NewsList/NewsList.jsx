@@ -9,10 +9,15 @@ const NewsList = () => {
   const dispatch = useDispatch();
   const news = useSelector((state) => state.news);
   const { newsList, loading, errorMsg } = news;
+
   useEffect(() => {
+
     dispatch(fetchNews());
     window.scrollTo({ top: 0, left: 0, height: window });
+    
   }, [dispatch]);
+
+
   return (
     <Container className="news-container">
       {newsList.length ? (
@@ -72,13 +77,15 @@ const NewsList = () => {
               )
           )}
         </Row>
-      ) :  ( loading &&
-        <>
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-          <p>{errorMsg}</p>
-        </>
+      ) : (
+        loading && (
+          <>
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+            <p>{errorMsg}</p>
+          </>
+        )
       )}
       {/* End of newsapi mapping */}
 
