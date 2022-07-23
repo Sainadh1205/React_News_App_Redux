@@ -1,3 +1,4 @@
+import Api from "../../components/Assets/Api";
 import axios from "axios";
 
 export const FETCHNEWS_REQUEST = "FETCHNEWS_REQUEST";
@@ -19,15 +20,20 @@ export const fetchNewsFailure = (errorMsg) => ({
 });
 
 export const fetchNews = () => {
-  return async (dispacth, getState) => {
+  return async (dispatch, getState) => {
     try {
-      dispacth(fetchNewsRequest());
-      const res = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=7561b0dd655e4f529c9f4e64db980e70"
-      );
-      dispacth(fetchNewsSuccess(res.data.articles))
+      dispatch(fetchNewsRequest());
+      setTimeout(() => {
+        dispatch(fetchNewsSuccess(Api))
+      }, 2000);
+
+      // const res = await axios.get(
+      //   "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=7561b0dd655e4f529c9f4e64db980e70"
+      // );
+      
+      // dispatch(fetchNewsSuccess(res.data.articles));
     } catch (err) {
-      dispacth(fetchNewsFailure(err.message));
+      dispatch(fetchNewsFailure(err.message));
     }
   };
 };
