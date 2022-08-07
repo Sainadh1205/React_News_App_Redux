@@ -1,5 +1,5 @@
 import Api from "../../components/Assets/Api";
-import axios from "axios";
+// import axios from "axios";
 
 export const FETCHNEWS_REQUEST = "FETCHNEWS_REQUEST";
 export const FETCHNEWS_SUCCESS = "FETCHNEWS_SUCCESS";
